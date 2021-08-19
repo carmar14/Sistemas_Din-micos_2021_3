@@ -16,8 +16,8 @@ end
 figure
 pzmap(h(1),'r')
 hold on
-pzmap(h(2),'k')
-pzmap(h(3),'b')
+pzmap(h(2),'b')
+pzmap(h(3),'k')
 legend('\tau2','\tau1','\tau3')
 
 tau = 4;
@@ -25,13 +25,20 @@ k=[-3 -1 -0.5 0.5 1 3];
 figure
 for i=1:length(k)
     H=tf(k(i),[tau 1]);    
-    step(-3*H)
+    step(-2*H)
     hold on
 end
 
 legend('k=-3','k=-1','k=-0.5','k=0.5','k=1','k=3')
 
-% 
+%6 , 2, 1, -1, -2, -6
+
+
+k=2.3;
+tau=1.2;
+h= tf(k,[tau 1]);
+figure
+impulse(h)% h(t)=(k/tau) e^(-t/tau)
 
 
 
