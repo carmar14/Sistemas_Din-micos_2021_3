@@ -4,9 +4,9 @@ close all
 clc
 
 %parametros
-b=4000;
-k1=1000;
-k2=2000;
+b=40;
+k1=10;
+k2=20;
 m1=10;
 m2=3000;
 
