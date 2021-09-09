@@ -7,8 +7,7 @@ wn=2;
 k=1;
 
 %usando el comando step---Respuesta al escalon del sistema
-for i=length(e):-1:1 %for para encontrar cada una de las funciones de trasnferencia asociadas a ?
-  %e(i)
+for i=1:length(e)%:-1:1 %for para encontrar cada una de las funciones de trasnferencia asociadas a ?
   H=tf(k*wn^2,[1 2*e(i)*wn wn^2]);%Funcion de transferencia del sistema
   step(H)
   hold on

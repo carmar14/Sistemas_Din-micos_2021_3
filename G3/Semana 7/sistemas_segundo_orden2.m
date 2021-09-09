@@ -7,7 +7,7 @@ wn=2;
 k=1;
 
 %usando el comando step---Respuesta al escalon del sistema
-for i=length(e):-1:1 %for para encontrar cada una de las funciones de trasnferencia asociadas a ?
+for i=1:length(e)%:-1:1 %for para encontrar cada una de las funciones de trasnferencia asociadas a ?
   H=tf(k*wn^2,[1 2*e(i)*wn wn^2]);%Funcion de transferencia del sistema
   step(H)
   hold on
@@ -44,14 +44,14 @@ wn=1.1:1:9;
 k=1;
 figure
 %usando el comando step---Respuesta al escalon del sistema
-for i=length(wn):-1:1 %for para encontrar cada una de las funciones de trasnferencia asociadas a ?
+for i=1:length(wn)%:-1:1 %for para encontrar cada una de las funciones de trasnferencia asociadas a ?
   H=tf(k*wn(i)^2,[1 2*e*wn(i) wn(i)^2]);%Funcion de transferencia del sistema
   step(H)
   hold on
 end
 
 legend('\omega_{n}=1.1','\omega_{n}=2.1','\omega_{n}=3.1','\omega_{n}=4.1','\omega_{n}=5.1','\omega_{n}=6.1','\omega_{n}=7.1','\omega_{n}=8.1')
-title('Respuesta al escalón, Caso 2: \zeta=1, 1.1<\omega_{n}<8.1')
+title('Respuesta al escalón, Caso 2: \zeta=1, 1.1<=\omega_{n}<=8.1')
 grid on
  
 %Respuesta al escalon usando la expresion encontrada en (8)
@@ -81,7 +81,7 @@ wn=2;
 k=1;
 
 %usando el comando step---Respuesta al escalon del sistema
-for i=length(e):-1:1 %for para encontrar cada una de las funciones de trasnferencia asociadas a ?
+for i=1:length(e)%:-1:1 %for para encontrar cada una de las funciones de trasnferencia asociadas a ?
   H=tf(k*wn^2,[1 2*e(i)*wn wn^2]);%Funcion de transferencia del sistema
   step(H)
   hold on
@@ -129,6 +129,21 @@ end
 
 legend('\zeta=0.1','\zeta=0.2','\zeta=0.3','\zeta=0.4','\zeta=0.5','\zeta=0.6','\zeta=0.7','\zeta=0.8','\zeta=0.9')
 title('Respuesta al escalón (13), Caso 3: 0<\zeta<1, \omega_{n}=2')
+
+figure
+
+e=0.4;
+wn=1.1:1:9; 
+
+for i=1:length(wn)%:-1:1 %for para encontrar cada una de las funciones de trasnferencia asociadas a ?
+  H=tf(k*wn(i)^2,[1 2*e*wn(i) wn(i)^2]);%Funcion de transferencia del sistema
+  step(H)
+  hold on
+end
+
+legend('\omega_{n}=1.1','\omega_{n}=2.1','\omega_{n}=3.1','\omega_{n}=4.1','\omega_{n}=5.1','\omega_{n}=6.1','\omega_{n}=7.1','\omega_{n}=8.1')
+title('Respuesta al escalón, \zeta=0.4, 1.1<\omega_{n}<8.1')
+grid on
 
 %Sistema marginalmente estable
 figure
