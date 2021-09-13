@@ -21,15 +21,14 @@ step(ha,'r')
 legend('SSO','SA')
 
 k=1
-e=0.5; 
-wn=2;
+e=2.5; %incorrecto
+wn=1;
 h2=tf(k*wn^2,[1 2*e*wn wn^2]);
 h4=h2*h;
 figure
 step(h,'k')
 hold on
 step(h4,'r')
-legend('SSO','SCO')
 
 figure
 pzmap(h)
