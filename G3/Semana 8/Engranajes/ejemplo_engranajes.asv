@@ -19,7 +19,7 @@ B=[0 0;
 C=[1 0];
 D=zeros(1,2);
 sis=ss(A,B,C,D);
-step(sis)
+step(2*sis)
 
 %magnitud de entradas
 u1=10;
