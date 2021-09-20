@@ -4,8 +4,8 @@ close all
 
 %Parametros
 R=10;
-L=0.01;
-% L=1e-3; %Comportamiento similar debido a que L<<R
+% L=0.01;
+L=1e-3; %Comportamiento similar debido a que L<<R
 Kb=5;
 Kp=5;
 J=0.01;
@@ -41,4 +41,4 @@ D=[];
 
 sis=ss(A,B,C,D);
 figure
-step(sis)
+step(10*sis)
