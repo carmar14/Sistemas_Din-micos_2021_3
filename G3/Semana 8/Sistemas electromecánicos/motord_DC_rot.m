@@ -4,7 +4,7 @@ close all
 
 %Parametros
 R=10;
-L=0.01;
+L=0.001;
 % L=1e-3; %Comportamiento similar debido a que L<<R
 Kb=5;
 Kp=5;
