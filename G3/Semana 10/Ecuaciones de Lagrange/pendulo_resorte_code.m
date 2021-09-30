@@ -9,6 +9,7 @@ l=0.5;
 k=1000;
 g=9.8;
 
+%%X(1)=r X(2)=rp X(3)=theta X(4)=thetap
 %x0=[0.00001, 0, pi/8, 0];
 % x0=[-0.1, 0, pi/8, 0];
 x0=[0.7, 0, pi/6, 0]; 
@@ -73,6 +74,5 @@ function [dxdt]=pendulo_resorte_nl(t,X)
     x2p=g*cos(X(3))-(k/m)*(X(1)-l)+ X(1)*X(4)^2;
     x4p=-(2*X(2)*X(4)+g*sin(X(3)))/X(1);
     dxdt=[x1p;x2p;x3p;x4p];
-
 end
 
