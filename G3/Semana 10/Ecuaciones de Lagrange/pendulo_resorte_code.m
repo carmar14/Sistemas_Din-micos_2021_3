@@ -4,16 +4,16 @@ close all
 
 %Parámetros
 global m l k g
-m=1;
+m=10;
 l=0.5;
 k=1000;
 g=9.8;
 
 %%X(1)=r X(2)=rp X(3)=theta X(4)=thetap
-%x0=[0.00001, 0, pi/8, 0];
+x0=[-0.1, 0, pi/2, 0];
 % x0=[-0.1, 0, pi/8, 0];
-x0=[0.7, 0, pi/6, 0]; 
-% x0=[0.5, 0, 3.1, 0];
+%x0=[0.7, 0, pi/6, 0]; 
+%x0=[0.5, 3, -pi/3, -4];
 t=0:4e-3:10;
 
 [t,y]=ode45(@pendulo_resorte_nl,t,x0);
@@ -68,6 +68,7 @@ end
 
 function [dxdt]=pendulo_resorte_nl(t,X)
     global m l k g
+    
     %X(1)=r X(2)=rp X(3)=theta X(4)=thetap
     x1p=X(2);
     x3p=X(4);
