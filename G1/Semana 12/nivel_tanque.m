@@ -5,11 +5,17 @@ close all
 clc
 
 %Parametros del tanque
-R=7;
-C=100;
+R=2;
+C=150;
 sis=tf(R,[R*C 1]); %H(s)/Qi(s)
-[y t]=step(sis);
+sis2=tf(1,[R*C 1]); %Qo(s)/Qi(s)
+step(sis2)
+ylabel('q_o(m^3/s)');
+xlabel('Tiempo (s)');
+title('Caudal de salida')
 
+[y t]=step(sis);
+figure
 plot(t,y)
 ylabel('h(m)');
 xlabel('Tiempo (s)');
@@ -29,7 +35,7 @@ x3=[C C];
 y3=[0 y(end)+1];
 
 
-v=1;
+v=7;
 if v==1
     x=[0 C C 0]; %para el fill
     line(x1,y1,'Color','black','LineWidth',2)
