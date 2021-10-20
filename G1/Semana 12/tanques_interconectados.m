@@ -31,7 +31,7 @@ sis3=ss(A,B,C,[]);
 yss=step(sis3,t);
 
 
-plot(t,y,'k',t,yss(:,1),'r')
+plot(t,y,'k',t,yss(:,1),'.r')
 hold on
 % step(sis)
 ylabel('h1(m)');
@@ -39,7 +39,7 @@ xlabel('Tiempo (s)');
 title('Nivel de altura del líquido almacenado en el tanque 1')
 
 figure
-plot(t,ys,'k',t,yss(:,2),'r')
+plot(t,ys,'k',t,yss(:,2),'.r')
 % hold on
 % step(sis2)
 ylabel('h2(m)');
