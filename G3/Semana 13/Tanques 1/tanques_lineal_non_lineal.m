@@ -37,7 +37,7 @@ Bj=double(Bj);
 t=linspace(0,80,5000); %Q=2
 % t=linspace(0,800,5000); %Q=20
 Xe=[h1e h2e]; %punto de equilibrio del sistema 
-X0=1.1*Xe; %Condicion inicial del sistema no lineal debe estar cerca del punto de equilibrio
+X0=0.01+Xe;%1.1*Xe; %Condicion inicial del sistema no lineal debe estar cerca del punto de equilibrio
 
 Xini=X0-Xe; %condicion inicial del sistema lineal
 
@@ -69,9 +69,6 @@ end
 e1=(1/m)*sum((y(:,1)+Xe(1,1)-y1(:,1)).^2);
 
 e2=(1/m)*sum((y(:,2)+Xe(1,2)-y1(:,2)).^2);
-
-
-
 
 
 
