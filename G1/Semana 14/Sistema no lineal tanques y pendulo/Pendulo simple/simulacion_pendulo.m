@@ -4,7 +4,7 @@ close all
 
 global Xe
 Xe=[0 0];
-Xini=[0.8 0];%0.9*Xe; %Condiciones iniciales del no lineal 15°->0.261799
+Xini=[0.9 0];%0.9*Xe; %Condiciones iniciales del no lineal 15°->0.261799
 Xinil=Xini-Xe; %Condiciones iniciales del lineal
 t=linspace(0,4,200);
 [t,y]=ode45(@pendulo_simple,t,Xini);

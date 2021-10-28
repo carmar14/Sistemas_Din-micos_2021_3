@@ -37,13 +37,12 @@ Bj=double(Bj);
 t=linspace(0,80,5000); %Q=2
 % t=linspace(0,800,5000); %Q=20
 Xe=[h1e h2e]; %punto de equilibrio del sistema 
-X0=1.1*Xe; %Condicion inicial del sistema no lineal debe estar cerca del punto de equilibrio
+X0=5+Xe;%1.1*Xe; %Condicion inicial del sistema no lineal debe estar cerca del punto de equilibrio
 
 Xini=X0-Xe; %condicion inicial del sistema lineal
 
 [t,y]=ode45(@tanque_linealizado2,t,Xini); %sistema linealizado
 [m n]=size(y);
-
 
 [t,y1]=ode45(@tanque_no_lineal,t,X0); %sistema no lineal
 
