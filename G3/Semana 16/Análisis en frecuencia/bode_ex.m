@@ -53,9 +53,17 @@ figure
 bode(h)
 grid on
 
+close all
 
 K=3;
 h1=tf(2,[1 2]);
 h2=tf([1 8],8);
-h3=tf();
+d=conv([1 5-2*i],[1 5+2*i]);
+h3=tf(29,d);
 h=K*h1*h2*h3;
+figure
+pzmap(h)
+figure
+bode(h)
+grid on
+
