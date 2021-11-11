@@ -41,7 +41,7 @@ bode(h)
 grid on
 
 
-wn=2;
+wn=1;
 e=0.1;
 h=tf(wn^2,[1 2*e*wn wn^2]);
 figure
